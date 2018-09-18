@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Prediction</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+     function initMap() {
+		var place = {lat: 40, lng: -101}
+
+		var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center: place
+        });
+
+        var image = 'http://icons.iconarchive.com/icons/danieledesantis/playstation-flat/16/playstation-circle-black-and-white-icon.png';
+
+		var idval = 
+		[
+			null,null,
+			46.0,-66.0,
+			45.0,-63.0,
+			46.0,-63.0,
+			54.0,-95.0,
+			54.0,-115.0,
+			64.5,-132.0,
+			54.0,-105.5,
+			53.0,-60.0,
+			53.5,-68.0,
+			43.0,-107.5,
+			34.0,-106.0,
+			38.5,-77.0,
+			41.5,-71.0,
+			44.0,-120.0,
+			47.0,-100.0,
+			38.5,-117.0,
+			32.5,-83.0,
+			34.5,-92.0,
+			41.5,-99.5,
+			39.0,-111.5,
+			35.0,-98.5,
+			38.5,-80.0,
+			38.5,-105.5,
+			40.0,-74.5,
+			39.0,-75.0,
+			46.5,-110.0,
+			47.0,-120.5,
+			41.5,-72.5,
+			37.0,-119.0,
+			37.5,-85.5,
+			42.0,-71.5,
+			45.0,-114.0,
+			38.0,-92.0,
+			20.5,-157.5,
+			33.5,-80.5,
+			44.0,-71.5,
+			44.0,-100.0,
+			35.5,-85.5,
+			41.5,-93.0,
+			34.0,-111.5,
+			38.0,-79.0,
+			43.5,-72.0,
+			45.0,-69.0,
+			35.0,-79.5,
+			49.0,-84.5,
+			67.0,-90.5,
+			54.0,-126.5,
+			40.5,-77.5,
+			40.0,-82.5,
+			44.5,-89.5,
+			42.5,-75.5,
+			62.0,-149.0,
+			32.5,-89.5,
+			44.5,-86.0,
+			27.5,-83.5,
+			32.5,-86.5,
+			39.5,-89.5,
+			39.5,-86.0,
+			46.0,-93.0,
+			30.5,-91.0,
+			31.0,-100.0,
+			-24.0,121.0,
+			-19.5,145.5,
+			-35.5,149.0,
+			-36.5,145.0,
+			-32.0,135.0,
+			-18.0,133.5,
+			-32.5,147.0,
+			-41.5,146.0,
+			58.0,12.5,
+			35.5,66.0,
+			32.0,62.5,
+			31.0,63.5,
+			30.5,62.0,
+			32.5,66.0,
+			40.5,20.0,
+			-30.0,-68.5,
+			-43.5,-67.5,
+			-34.5,-68.5,
+			-38.5,-69.5,
+			-37.0,-60.0,
+			44.0,17.5,
+			55.0,28.5,
+			33.5,113.0,
+			41.0,122.0,
+			36.0,118.5,
+			43.5,126.0,
+			48.5,127.5,
+			29.5,27.5,
+			24.5,28.5,
+			25.5,33.5,
+			28.5,33.5,
+			30.0,33.5,
+			7.0,43.5,
+			16.0,80.5,
+			20.0,84.0,
+			15.0,76.0,
+			18.5,76.5,
+			23.5,78.0,
+			28.5,51.5,
+			32.5,52.0,
+			29.0,53.0,
+			49.5,50.5,
+			51.5,69.5,
+			48.5,70.0,
+			-2.0,39.5,
+			42.5,20.5,
+			49.5,6.0,
+			41.5,21.5,
+			42.5,18.5,
+			-14.5,34.5,
+			5.0,46.5,
+			37.0,9.5,
+			33.5,9.5,
+			35.5,10.0,
+			39.5,31.0,
+			41.0,33.5,
+			36.5,30.5,
+			40.5,38.5,
+			40.5,37.0,
+			42.5,26.0,
+			42.0,27.0,
+			43.0,24.5,
+			-3.5,-64.5,
+			1.5,-52.0,
+			-13.0,-41.5,
+			-5.0,-39.0,
+			-15.5,-49.5,
+			47.0,8.0,
+			46.5,6.5,
+			48.5,9.0,
+			48.5,11.0,
+			41.0,-3.5,
+			37.5,-5.5,
+			41.5,-2.5,
+			41.0,0.5,
+			40.5,-0.5,
+			59.0,27.0,
+			45.0,1.5,
+			44.0,1.0,
+			48.5,7.5,
+			48.0,6.0,
+			46.0,6.0,
+			47.0,-1.5,
+			47.0,6.0,
+			44.5,0.0,
+			50.5,-2.0,
+			54.0,-1.0,
+			54.5,-7.0,
+			55.5,-5.5,
+			57.0,-3.0,
+			52.5,-1.0,
+			39.5,22.5,
+			43.0,16.5,
+			45.0,14.5,
+			45.0,7.0,
+			44.5,8.5,
+			55.0,23.5,
+			57.0,21.5,
+			47.0,28.5,
+			52.5,5.5,
+			52.5,6.5,
+			52.5,4.5,
+			53.0,5.5,
+			-35.0,173.5,
+			52.0,21.0,
+			51.5,19.0,
+			54.0,18.0,
+			53.5,15.5,
+			37.5,-7.5,
+			39.5,-7.5,
+			44.0,28.0,
+			44.5,25.5,
+			45.0,24.0,
+			58.0,32.5,
+			49.0,44.0,
+			55.5,37.5,
+			58.0,32.5,
+			49.0,44.0,
+			55.5,37.5,
+			57.0,29.0,
+			57.5,107.0,
+			42.5,22.0,
+			43.5,20.0,
+			45.5,19.5,
+			44.0,21.5,
+			47.0,35.5,
+			45.0,34.5,
+			49.5,33.5,
+			-28.5,27.0,
+			46.5,13.5,
+			47.0,13.0,
+			49.5,13.0,
+			50.5,14.5,
+			51.5,11.5,
+			52.5,9.0,
+			46.0,18.0,
+			46.0,18.5,
+			46.0,17.5,
+			46.5,16.5,
+			41.5,12.5,
+			38.0,14.5,
+			49.0,21.0,
+			48.5,21.0,
+			40.5,46.5,
+			40.0,49.0,
+			-1.0,113.0,
+			13.5,108.0,
+
+
+
+		]
+
+		var locationval = 
+		[
+			null,
+			"New Brunswick-Canada",
+			"Nova Scotia-Canada",
+			"Prince Edward Island-Canada",
+			"Manitoba-Canada",
+			"Alberta-Canada",
+			"Yukon-Canada",
+			"Saskatchewan-Canada",
+			"Newfoundland and Labrador-Canada",
+			"Quebec-Canada",
+			"Wyoming-United States",
+			"New Mexico-United States",
+			"Maryland-United States",
+			"Rhode Island-United States",
+			"Oregon-United States",
+			"North Dakota-United States",
+			"Nevada-United States",
+			"Georgia-United States",
+			"Arkansas-United States",
+			"Nebraska-United States",
+			"Utah-United States",
+			"Oklahoma-United States",
+			"West Virginia-United States",
+			"Colorado-United States",
+			"New Jersey-United States",
+			"Delaware-United States",
+			"Montana-United States",
+			"Washington-United States",
+			"Connecticut-United States",
+			"California-United States",
+			"Kentucky-United States",
+			"Massachusetts-United States",
+			"Idaho-United States",
+			"Missouri-United States",
+			"Hawaii-US Hawaii",
+			"South Carolina-United States",
+			"New Hampshire-United States",
+			"South Dakota-United States",
+			"Tennessee-United States",
+			"Iowa-United States",
+			"Arizona-United States",
+			"Virginia-United States",
+			"Vermont-United States",
+			"Maine-United States",
+			"North Carolina-United States",
+			"Ontario-Canada",
+			"Nunavut-Canada",
+			"British Columbia-Canada",
+			"Pennsylvania-United States",
+			"Ohio-United States",
+			"Wisconsin-United States",
+			"New York-United States",
+			"Alaska-US-Alaska",
+			"Mississippi-United States",
+			"Michigan-United States",
+			"Florida-United States",
+			"Alabama-United States",
+			"Illinois-United States",
+			"Indiana-United States",
+			"Minnesota-United States",
+			"Louisiana-United States",
+			"Texas-United States",
+			"Western Australia-Australia",
+			"Queensland-Australia",
+			"Australian Capital Territory-Australia",
+			"Victoria-Australia",
+			"South Australia-Australia",
+			"Northern Territory-Australia",
+			"New South Wales-Australia",
+			"Tasmania-Australia",
+			"VÃ¤stra GÃ¶talands lÃ¤n-Sweden",
+			"Sari Pul-Afghanistan",
+			"Farah-Afghanistan",
+			"Hilmand-Afghanistan",
+			"Nimroz-Afghanistan",
+			"Uruzgan-Afghanistan",
+			"Berat-Albania",
+			"San Juan-Argentina",
+			"Chubut-Argentina",
+			"Mendoza-Argentina",
+			"Neuquén-Argentina",
+			"Buenos Aires-Argentina",
+			"Central Bosnia-Bosnia and Herzegovina",
+			"Vitebsk-Belarus",
+			"Henan-China",
+			"Liaoning-China",
+			"Shandong-China",
+			"Jilin-China",
+			"Heilongjiang-China",
+			"Matruh-Egypt",
+			"Al Wadi at Jadid-Egypt",
+			"Al Bahr al Ahmar-Egypt",
+			"Janub Sina'-Egypt",
+			"Shamal Sina'-Egypt",
+			"Somali-Ethiopia",
+			"Andhra Pradesh-India",
+			"Orissa-India",
+			"Karnataka-India",
+			"Maharashtra-India",
+			"Madhya Pradesh-India",
+			"Bushehr-Iran",
+			"Esfahan-Iran",
+			"Fars-Iran",
+			"West Kazakhstan-Kazakhstan",
+			"Aqmola-Kazakhstan",
+			"Qaraghandy-Kazakhstan",
+			"Coast-Kenya",
+			"Glogovac-Kosovo",
+			"Luxembourg-Luxembourg",
+			"Caška-Macedonia",
+			"Cetinje-Montenegro",
+			"Ntcheu-Malawi",
+			"Galguduud-Somalia",
+			"Bizerte-Tunisia",
+			"Gabès-Tunisia",
+			"Sousse-Tunisia",
+			"Eskisehir-Turkey",
+			"Kastamonu-Turkey",
+			"Antalya-Turkey",
+			"Giresun-Turkey",
+			"Ordu-Turkey",
+			"Сливен-Bulgaria",
+			"Бургас-Bulgaria",
+			"Ловеч-Bulgaria",
+			"AMAZONAS-Brazil",
+			"AMAPÁ-Brazil",
+			"BAHIA-Brazil",
+			"CEARÁ-Brazil",
+			"GOIÁS-Brazil",
+			"Luzern-Switzerland",
+			"Vaud-Switzerland",
+			"Brandenburg-Germany",
+			"Niedersachsen-Germany",
+			"Baden-Württemberg-Germany",
+			"Bayern-Germany",
+			"Cantabria-Spain",
+			"Segovia-Spain",
+			"Sevilla-Spain",
+			"Soria-Spain",
+			"Tarragona-Spain",
+			"Teruel-Spain",
+			"Ida-Virumaa-Estonia",
+			"Corrèze-France",
+			"Tarn-et-Garonne-France",
+			"Bas-Rhin-France",
+			"Vosges-France",
+			"Haute-Savoie-France",
+			"Loire-Atlantique-France",
+			"Doubs-France",
+			"Gironde-France",
+			"Dorset-United Kingdom",
+			"North Yorkshire-United Kingdom",
+			"Omagh-United Kingdom",
+			"Argyll and Bute-United Kingdom",
+			"Moray-United Kingdom",
+			"Leicestershire-United Kingdom",
+			"ΘΕΣΣΑΛΙΑ-Greece",
+			"Splitsko-dalmatinska županija-Croatia",
+			"Primorsko-goranska županija-Croatia",
+			"TORINO-Italy",
+			"ALESSANDRIA-Italy",
+			"Kaunas-Lithuania",
+			"Ventspils novads-Latvia",
+			"Străşeni-Moldova",
+			"Flevoland-Netherlands",
+			"Drenthe-Netherlands",
+			"Noord-Holland-Netherlands",
+			"Friesland-Netherlands",
+			"Northland Region-New Zealand",
+			"Mazowieckie-Poland",
+			"Lódzkie-Poland",
+			"Pomorskie-Poland",
+			"Zachodniopomorskie-Poland",
+			"Beja-Portugal",
+			"Castelo Branco-Portugal",
+			"Constanţa-Romania",
+			"Dâmboviţa-Romania",
+			"Vâlcea-Romania",
+			"Новгородская область-Russia",
+			"Волгоградская область-Russia",
+			"Московская область-Russia",
+			"Псковская область-Russia",
+			"Иркутская область-Russia",
+			"Pčinjski upravni okrug-Serbia",
+			"Moravički upravni okrug-Serbia",
+			"Severnobački upravni okrug-Serbia",
+			"Braničevski upravni okrug-Serbia",
+			"Запорізька-Ukraine",
+			"Крим-Ukraine",
+			"Полтавська-Ukraine",
+			"FREE STATE-South Africa",
+			"Kärnten-Austria",
+			"Salzburg-Austria",
+			"Plzeňský-Czech Republic",
+			"Liberecký-Czech Republic",
+			"Sachsen-Anhalt-Germany",
+			"Niedersachsen-Germany",
+			"Baranya-Hungary",
+			"Tolna-Hungary",
+			"Somogy-Hungary",
+			"Zala-Hungary",
+			"ROMA-Italy",
+			"MESSINA-Italy",
+			"Prešovský kraj-Slovakia",
+			"Košický kraj-Slovakia",
+			"Goranboy-Azerbaijan",
+			"Abşeron-Azerbaijan",
+			"Kalimantan Tengah-Indonesia",
+			"Gia Lai-Vietnam",
+
+		]
+
+
+		var id = new Array();
+		var location = new Array();
+
+        
+		for(var i=1; i<=208; i++){
+			id[i] = {lat: idval[2*i], lng: idval[2*i+1]}
+		}
+		for(var i=1; i<=208; i++){
+			location[i]=locationval[i]
+		}
+		var contentString = new Array()
+		var infowindow = new Array()
+		var marker = new Array()
+
+		var template = 
+		'<div id="content" style="width:650px;height:500px;">'+
+		'<div id="siteNotice">'+
+		'</div>'+
+		'<h1 id="firstHeading" class="firstHeading">IDX</h1>'+
+		'<div id="bodyContent">'+
+		'<iframe src="file:finnalmapx.html" frameborder="0" width="500" height="200"></iframe>'+
+		'<img src="file:idx.png" width=500" height="360" />'+
+		'</div>'+            
+		'</div>';
+
+
+
+		for (var i=1;i<=208;i++)
+		{
+			var tmp = template;
+			tmp = tmp.replace(/IDX/,"location: "+String(location[i]))
+			tmp = tmp.replace(/mapx/,"map"+String(i))
+			tmp = tmp.replace(/idx/,"id"+String(i))
+			contentString[i] = tmp;
+
+			infowindow[i] = new google.maps.InfoWindow({
+			content: contentString[i]
+			}) ;
+
+			marker[i] = new google.maps.Marker({
+			position: id[i],
+			map: map,
+			title: 'Prediction',
+			icon: image
+			});
+
+		}
+		for(var i=1;i<=208;i++)
+		{
+			command="marker["+i+"].addListener('click', function() {infowindow["+i+"].open(map, marker["+i+"]);});"
+			eval(command);
+		}
+
+	 }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANrCuFpPCZ9n3J0uT5hGrdg6lM_SRxGo8&callback=initMap">
+    </script>
+  </body>
+</html>
+
+
