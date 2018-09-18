@@ -1,1 +1,0 @@
-# precipitation-and-sea-surface-temperature-
