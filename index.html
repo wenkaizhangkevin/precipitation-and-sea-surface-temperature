@@ -483,7 +483,7 @@
 		'<h1 id="firstHeading" class="firstHeading">IDX</h1>'+
 		'<div id="bodyContent">'+
 		'<iframe src="file:finnalmapx.html" frameborder="0" width="500" height="200"></iframe>'+
-		'<img src="file:idx.png" width=500" height="360" />'+
+		'<img src="idx.png" width=500" height="360" />'+
 		'</div>'+            
 		'</div>';
 
@@ -494,7 +494,7 @@
 			var tmp = template;
 			tmp = tmp.replace(/IDX/,"location: "+String(location[i]))
 			tmp = tmp.replace(/mapx/,"map"+String(i))
-			tmp = tmp.replace(/idx/,"id"+String(i))
+			tmp = tmp.replace(/idx/,"http://120.78.194.96//id"+String(i))
 			contentString[i] = tmp;
 
 			infowindow[i] = new google.maps.InfoWindow({
